@@ -250,3 +250,15 @@ def DeleteTratamiento(request, tratamiento_id):
         'Tratamiento/DeleteTratamiento.html',
         context={'eliminar': eliminar}
     )
+
+@login_required
+def DeleteConsulta(request, consulta_id):
+    eliminar = get_object_or_404(Consulta, id=consulta_id)
+    if request.method == 'POST':
+        eliminar.delete()
+        return HttpResponseRedirect('/consulta')
+    return render(
+        request,
+        'Consulta/DeleteConsulta.html',
+        context={'eliminar': eliminar}
+    )

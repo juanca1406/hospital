@@ -123,6 +123,9 @@
             <td><a href="{% url 'Registro:UpdateConsulta' consulta.id %}"><Button
                   class="btn btn-success">Editar</Button></a>
             </td>
+            <td><a href="{% url 'Registro:DeleteConsulta' consulta.id %}"><button
+                  class="btn btn-danger">Eliminar</button></a>
+            </td>
           </tr>
           {% endfor %}
         </tbody>
